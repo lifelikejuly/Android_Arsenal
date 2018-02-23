@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_standard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="standard"
+        android:onClick="standard"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_singleTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="singleTop"
+        android:onClick="singleTop"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_singleTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="singleTask"
+        android:onClick="singleTask"
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_singleInstance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="singleInstance"
+        android:onClick="singleInstance"
+        />
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <NumberPicker
+        android:id="@+id/numberPicker_date"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content">
+    </NumberPicker>
+    <NumberPicker
+        android:id="@+id/numberPicker_hour"
+        android:layout_toRightOf="@+id/numberPicker_date"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content">
+    </NumberPicker>
+    <NumberPicker
+        android:id="@+id/numberPicker_min"
+        android:layout_toRightOf="@+id/numberPicker_hour"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content">
+    </NumberPicker>
+</RelativeLayout>

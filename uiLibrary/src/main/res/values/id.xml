@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="chat_input" />
+    <item type="id" name="chat_send" />
+    <item type="id" name="chat_emjo"/>
+</resources>

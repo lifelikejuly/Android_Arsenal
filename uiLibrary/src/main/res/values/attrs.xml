@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="defaultpage">
+        <attr name="page_icon" format="reference"/>
+        <attr name="page_bigtitle" format="string"/>
+        <attr name="page_smalltitle" format="string"/>
+        <attr name="page_action" format="string"/>
+        <attr name="page_action_textcolor" format="color"/>
+        <attr name="page_action_shape" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="rotationPager">
+        <attr name="selectdrawable" format="reference"/>
+        <attr name="unselectdrawable" format="reference"/>
+        <attr name="Pager_delay" format="integer"/>
+    </declare-styleable>
+</resources>

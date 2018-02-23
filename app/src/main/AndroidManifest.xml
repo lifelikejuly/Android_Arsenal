@@ -1,0 +1,84 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+          package="com.julyyu.arsenal"
+    >
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.julyyu.arsenal.ui.activity.IndexActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.julyyu.arsenal.ui.activity.DefaultActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            />
+        <activity
+            android:name="com.julyyu.arsenal.launchModeExercise.StandardActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="standard"
+            />
+        <activity
+            android:name="com.julyyu.arsenal.launchModeExercise.SingleTopActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            />
+        <activity
+            android:name="com.julyyu.arsenal.launchModeExercise.SingleTaskActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name="com.julyyu.arsenal.launchModeExercise.SingleInstanceActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            />
+        <activity
+            android:name=".notificationExercise.NotificationInfoActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ipcExercise.MessengerClientActivity"
+            android:screenOrientation="portrait"
+            />
+        <service
+            android:name=".ipcExercise.MessengerService"
+            android:process=":messenger"
+            />
+        <service
+            android:name=".ToastService"
+            android:process=":message"
+            >
+            <intent-filter>
+                <action android:name="toast_service"></action>
+            </intent-filter>
+        </service>
+        <activity
+            android:name=".ipcExercise.SocketActivity"
+            android:screenOrientation="portrait"
+            />
+        <service
+            android:name=".ipcExercise.SocketService"
+            android:process=":socket"
+            >
+
+        </service>
+    </application>
+
+</manifest>

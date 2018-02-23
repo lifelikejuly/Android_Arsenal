@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.julyyu.arsenal"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    flavorDimensions "tier", "minApi" //Gradle3.0 必需设置否则编译不过
+    //配置多版本apk
+    productFlavors {
+        Beta {
+            applicationId "com.julyyu.arsenal.beta"
+            resValue("string", "strKey","betaStrValue") //getResources().getString(R.String.strKey)
+            manifestPlaceholders = [app_new_name:"multi_version.beta",icon: "@mipmap/ic_launcher_beta"]
+            dimension "tier"
+        }
+        Releases {
+            applicationId "com.julyyu.arsenal.releases"
+            resValue("string", "strKey","releaseStrValue")
+            manifestPlaceholders = [app_new_name:"multi_version.releases",icon: "@mipmap/ic_launcher_round"]
+            dimension "minApi"
+        }
+    }
+
+
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile rootProject.ext.supportDependencies.junit
+    compile rootProject.ext.supportDependencies.supportAppcompat
+    compile rootProject.ext.supportDependencies.recyclerview
+    compile rootProject.ext.supportDependencies.butterknife
+    compile rootProject.ext.supportDependencies.constraint
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.9'
+    compile 'com.yanzhenjie.nohttp:nohttp:1.1.8'
+//    compile 'com.yanzhenjie.nohttp:okhttp:1.1.8'
+    annotationProcessor rootProject.ext.supportDependencies.butterknifecompiler
+//    compile 'com.tencent.sonic:sdk:1.0.0'
+//    compile "com.android.support:support-emoji:26.0.1"
+    compile project(':uiLibrary')
+    compile project(':utilsLibrary')
+}
