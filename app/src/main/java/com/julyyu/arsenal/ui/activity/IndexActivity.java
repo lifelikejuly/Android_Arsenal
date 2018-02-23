@@ -1,23 +1,16 @@
 package com.julyyu.arsenal.ui.activity;
 
 
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.PersistableBundle;
 
 import com.julyyu.arsenal.Route;
-import com.julyyu.arsenal.adapter.ItemAdapter;
+import com.julyyu.arsenal.exercise.adapter.ItemAdapter;
 import com.julyyu.uilibrary.activity.BaseToolBarRecyclerRefreshActivity;
 import com.julyyu.uilibrary.adapter.BaseRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.Executors;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by JulyYu on 2017/4/14.

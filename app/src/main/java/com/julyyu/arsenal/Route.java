@@ -3,10 +3,10 @@ package com.julyyu.arsenal;
 import android.content.Context;
 import android.content.Intent;
 
-import com.julyyu.arsenal.launchModeExercise.SingleInstanceActivity;
-import com.julyyu.arsenal.launchModeExercise.SingleTaskActivity;
-import com.julyyu.arsenal.launchModeExercise.SingleTopActivity;
-import com.julyyu.arsenal.launchModeExercise.StandardActivity;
+import com.julyyu.arsenal.exercise.launchModeExercise.SingleInstanceActivity;
+import com.julyyu.arsenal.exercise.launchModeExercise.SingleTaskActivity;
+import com.julyyu.arsenal.exercise.launchModeExercise.SingleTopActivity;
+import com.julyyu.arsenal.exercise.launchModeExercise.StandardActivity;
 import com.julyyu.arsenal.ui.activity.DefaultActivity;
 
 
