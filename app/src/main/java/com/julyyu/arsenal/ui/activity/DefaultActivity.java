@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.view.MotionEvent;
 
+import com.julyyu.arsenal.exercise.bluetoothExercise.BlueToothDeviceSearchFragment;
+import com.julyyu.arsenal.exercise.objectCopyExercise.ObjectCopyFragment;
+import com.julyyu.arsenal.exercise.dataBindingExercise.DataBindingFragment;
 import com.julyyu.arsenal.exercise.ipcExercise.IPCFragment;
-import com.julyyu.arsenal.exercise.ipcExercise.MessengerClientActivity;
 import com.julyyu.arsenal.R;
-import com.julyyu.arsenal.exercise.classExercise.ClassFragment;
-import com.julyyu.arsenal.exercise.mutliThreadExercise.ThreadFragment;
+import com.julyyu.arsenal.exercise.reflectionExercise.ReflectionFragment;
+import com.julyyu.arsenal.exercise.threadExercise.ThreadFragment;
 import com.julyyu.arsenal.exercise.toastCustomExercise.ToastCustomFragment;
 import com.julyyu.arsenal.exercise.serializationExercise.SerializationTestFragment;
 import com.julyyu.arsenal.ui.fragment.ChatInputFragment;
@@ -79,10 +81,19 @@ public class DefaultActivity extends BaseToolBarTitleActivity {
                 setFragmentPage(new ThreadFragment());
                 break;
             case 11:
-                setFragmentPage(new ClassFragment());
+                setFragmentPage(new ReflectionFragment());
                 break;
             case 12:
                 setFragmentPage(new IPCFragment());
+                break;
+            case 13:
+                setFragmentPage(new ObjectCopyFragment());
+                break;
+            case 14:
+                setFragmentPage(new DataBindingFragment());
+                break;
+            case 15:
+                setFragmentPage(new BlueToothDeviceSearchFragment());
                 break;
         }
     }

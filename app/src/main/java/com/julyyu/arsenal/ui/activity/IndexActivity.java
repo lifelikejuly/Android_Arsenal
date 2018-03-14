@@ -39,6 +39,9 @@ public class IndexActivity extends BaseToolBarRecyclerRefreshActivity<ItemAdapte
         strings.add("多线程");
         strings.add("反射代理");
         strings.add("跨进程通信");
+        strings.add("浅拷贝和深拷贝");
+        strings.add("DataBinding使用");
+        strings.add("蓝牙BlueTooth使用");
         setAdapter(new ItemAdapter(strings));
         this.adapter.setItemSingleListener(new BaseRecyclerAdapter.ItemSingleListener<String>() {
             @Override

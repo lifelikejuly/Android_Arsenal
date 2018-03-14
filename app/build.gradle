@@ -36,9 +36,15 @@ android {
             dimension "minApi"
         }
     }
+    dataBinding{
+        enabled = true
+    }
 
 
-
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -52,6 +58,7 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.9.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.9'
     compile 'com.yanzhenjie.nohttp:nohttp:1.1.8'
+    compile 'com.neovisionaries:nv-websocket-client:2.3'
 //    compile 'com.yanzhenjie.nohttp:okhttp:1.1.8'
     annotationProcessor rootProject.ext.supportDependencies.butterknifecompiler
 //    compile 'com.tencent.sonic:sdk:1.0.0'

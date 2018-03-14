@@ -1,4 +1,4 @@
-package com.julyyu.arsenal.exercise.mutliThreadExercise;
+package com.julyyu.arsenal.exercise.threadExercise;
 
 /**
  * Created by julyyu on 2018/2/5.

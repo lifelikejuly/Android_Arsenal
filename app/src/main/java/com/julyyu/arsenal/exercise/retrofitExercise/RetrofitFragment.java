@@ -58,6 +58,8 @@ public class RetrofitFragment extends BaseFragment{
         Request request = new Request.Builder()
                 .url("https://api.github.com/")
                 .build();
+
+        // 异步获取
         okHttpClient.newCall(request)
                 .enqueue(new okhttp3.Callback() {
                     @Override
@@ -70,6 +72,7 @@ public class RetrofitFragment extends BaseFragment{
 
                     }
                 });
+        // 同步获取
         try {
             okhttp3.Response response = okHttpClient.newCall(request)
                     .execute();

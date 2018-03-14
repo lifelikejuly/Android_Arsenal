@@ -1,4 +1,4 @@
-package com.julyyu.arsenal.exercise.classExercise;
+package com.julyyu.arsenal.exercise.reflectionExercise;
 
 import com.julyyu.utilslibrary.util.LogUtils;
 

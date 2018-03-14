@@ -8,7 +8,7 @@ import com.julyyu.uilibrary.activity.BaseToolBarTitleActivity;
  * Created by julyyu on 2018/2/12.
  */
 
-public class LifetActivity extends BaseToolBarTitleActivity{
+public class LifeActivity extends BaseToolBarTitleActivity{
 
     @Override
     protected int getLayout() {
@@ -17,7 +17,7 @@ public class LifetActivity extends BaseToolBarTitleActivity{
 
     @Override
     protected void initView() {
-
+//            getSupportFragmentManager().beginTransaction().add();
     }
 
     @Override
@@ -59,11 +59,13 @@ public class LifetActivity extends BaseToolBarTitleActivity{
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
+        //
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        //
     }
 
 }

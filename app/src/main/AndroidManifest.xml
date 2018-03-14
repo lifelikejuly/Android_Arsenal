@@ -2,13 +2,22 @@
 
           package="com.julyyu.arsenal"
     >
+    <!--使用蓝牙所需要的权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <!--使用扫描和设置蓝牙的权限（申明这一个权限必须申明上面一个权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!--6.0以上蓝牙搜索功能需要提供位置定位权限否则无法正常使用-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_SMS"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <!--Socket通信额外需要的线程-->
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--Android5.0之前，是默认申请GPS硬件功能的。而在Android 5.0 之后，需要在manifest 中申明GPS硬件模块功能的使用。-->
+    <uses-feature android:name="android.hardware.location.gps" />
 
     <!--为连接AIDL的服务自定义出一个新的权限-->
     <permission
@@ -38,6 +47,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"
             />
+        <!--活动启动模式-->
         <activity
             android:name=".exercise.launchModeExercise.StandardActivity"
             android:screenOrientation="portrait"
@@ -58,10 +68,12 @@
             android:screenOrientation="portrait"
             android:launchMode="singleInstance"
             />
+        <!--通知-->
         <activity
             android:name=".exercise.notificationExercise.NotificationInfoActivity"
             android:screenOrientation="portrait"
             />
+        <!--AIDL-->
         <activity
             android:name=".exercise.ipcExercise.MessengerClientActivity"
             android:screenOrientation="portrait"
@@ -90,6 +102,11 @@
             >
 
         </service>
+        <!--线程使用-->
+        <activity
+            android:name=".exercise.threadExercise.ThreadPoolExecutorActivity"
+            android:screenOrientation="portrait"
+            />
 
         <service
             android:name=".ToastService"

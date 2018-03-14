@@ -1,4 +1,4 @@
-package com.julyyu.arsenal.exercise.BinderExercise;
+package com.julyyu.arsenal.exercise.binderExercise;
 
 import android.os.Binder;
 import android.os.Bundle;

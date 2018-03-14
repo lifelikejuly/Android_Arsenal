@@ -1,4 +1,4 @@
-package com.julyyu.arsenal.exercise.classExercise;
+package com.julyyu.arsenal.exercise.reflectionExercise;
 
 /**
  * Created by julyyu on 2018/2/10.

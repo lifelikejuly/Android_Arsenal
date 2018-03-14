@@ -1,4 +1,4 @@
-package com.julyyu.arsenal.exercise.mutliThreadExercise;
+package com.julyyu.arsenal.exercise.threadExercise;
 
 import com.julyyu.utilslibrary.util.LogUtils;
 
