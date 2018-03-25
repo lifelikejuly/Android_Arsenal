@@ -52,13 +52,18 @@ dependencies {
     testCompile rootProject.ext.supportDependencies.junit
     compile rootProject.ext.supportDependencies.supportAppcompat
     compile rootProject.ext.supportDependencies.recyclerview
+    compile rootProject.ext.supportDependencies.cardview
     compile rootProject.ext.supportDependencies.butterknife
     compile rootProject.ext.supportDependencies.constraint
+
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.okhttp3:okhttp:3.9.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.9'
     compile 'com.yanzhenjie.nohttp:nohttp:1.1.8'
     compile 'com.neovisionaries:nv-websocket-client:2.3'
+    compile ('com.github.bumptech.glide:glide:4.6.1'){
+        exclude group: "com.android.support"
+    }
 //    compile 'com.yanzhenjie.nohttp:okhttp:1.1.8'
     annotationProcessor rootProject.ext.supportDependencies.butterknifecompiler
 //    compile 'com.tencent.sonic:sdk:1.0.0'

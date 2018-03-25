@@ -10,6 +10,11 @@ import com.julyyu.uilibrary.activity.BaseToolBarTitleActivity;
 
 public class LifeActivity extends BaseToolBarTitleActivity{
 
+    /**
+     * start stop 关于是否可见 / resume pause关于是否在前台
+     * @return
+     */
+
     @Override
     protected int getLayout() {
         return 0;

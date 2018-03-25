@@ -1,12 +1,12 @@
-ext{
+ext {
     android = [
-            compileSdkVersion    : 26,
-            buildToolsVersion    : '26.0.2',
-            applicationId        : "com.julyyu.kitdemo",
-            minSdkVersion        : 14,
-            targetSdkVersion     : 26,
-            versionCode          : 1,
-            versionName          : "1.0"
+            compileSdkVersion: 26,
+            buildToolsVersion: '26.0.2',
+            applicationId    : "com.julyyu.kitdemo",
+            minSdkVersion    : 14,
+            targetSdkVersion : 26,
+            versionCode      : 1,
+            versionName      : "1.0"
     ]
     //Version
     supportLibrary = "26.0.2"
@@ -22,16 +22,17 @@ ext{
 //    ]
     //supportLibraries dependencies
     supportDependencies = [
-            junit : 'junit:junit:4.12',
-            supportAppcompat: "com.android.support:appcompat-v7:${supportLibrary}",
-            supportV4       : "com.android.support:support-v4:${supportLibrary}",
-            suppoutDesign   : "com.android.support:design:${supportLibrary}",
-            recyclerview :"com.android.support:recyclerview-v7:${supportLibrary}",
-            fastjson : "com.alibaba:fastjson:1.1.56.android",
-            butterknife : "com.jakewharton:butterknife:8.5.1",
-            butterknifecompiler : "com.jakewharton:butterknife-compiler:8.5.1",
-            joda : "joda-time:joda-time:2.9.9",
-            constraint:  "com.android.support.constraint:constraint-layout:1.+"
+            junit              : 'junit:junit:4.12',
+            supportAppcompat   : "com.android.support:appcompat-v7:${supportLibrary}",
+            supportV4          : "com.android.support:support-v4:${supportLibrary}",
+            suppoutDesign      : "com.android.support:design:${supportLibrary}",
+            cardview           : "com.android.support:cardview-v7:${supportLibrary}",
+            recyclerview       : "com.android.support:recyclerview-v7:${supportLibrary}",
+            fastjson           : "com.alibaba:fastjson:1.1.56.android",
+            butterknife        : "com.jakewharton:butterknife:8.5.1",
+            butterknifecompiler: "com.jakewharton:butterknife-compiler:8.5.1",
+            joda               : "joda-time:joda-time:2.9.9",
+            constraint         : "com.android.support.constraint:constraint-layout:1.+"
     ]
 
 }

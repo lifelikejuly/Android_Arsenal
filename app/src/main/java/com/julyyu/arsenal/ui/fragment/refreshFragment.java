@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 
 import com.julyyu.arsenal.R;
-import com.julyyu.arsenal.exercise.adapter.ItemAdapter;
+import com.julyyu.arsenal.ui.adapter.ItemAdapter;
 import com.julyyu.arsenal.ui.view.refresh.NewSwipeRefreshLayout;
 import com.julyyu.arsenal.ui.view.refresh.SwipeView;
 

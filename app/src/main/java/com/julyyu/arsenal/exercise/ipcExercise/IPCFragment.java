@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.julyyu.arsenal.R;
-import com.julyyu.arsenal.exercise.adapter.ItemAdapter;
+import com.julyyu.arsenal.ui.adapter.ItemAdapter;
 import com.julyyu.arsenal.aidl.AIDLActivity;
 import com.julyyu.arsenal.ui.base.BaseAppFragment;
 import com.julyyu.uilibrary.adapter.BaseRecyclerAdapter;

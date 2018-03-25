@@ -8,6 +8,7 @@ import com.julyyu.arsenal.exercise.launchModeExercise.SingleTaskActivity;
 import com.julyyu.arsenal.exercise.launchModeExercise.SingleTopActivity;
 import com.julyyu.arsenal.exercise.launchModeExercise.StandardActivity;
 import com.julyyu.arsenal.ui.activity.DefaultActivity;
+import com.julyyu.arsenal.ui.activity.IndexActivity;
 
 
 /**
@@ -15,6 +16,13 @@ import com.julyyu.arsenal.ui.activity.DefaultActivity;
  */
 
 public class Route {
+
+
+    public static void goIndex(Context context,int item){
+        Intent intent = new Intent(context, IndexActivity.class);
+        intent.putExtra("position",item);
+        context.startActivity(intent);
+    }
 
     public static void goPage(Context context,int item){
         Intent intent = new Intent(context, DefaultActivity.class);

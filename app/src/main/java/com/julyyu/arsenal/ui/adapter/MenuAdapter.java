@@ -1,8 +1,7 @@
-package com.julyyu.arsenal.exercise.adapter;
+package com.julyyu.arsenal.ui.adapter;
 
 import android.view.View;
-import android.widget.Button;
-
+import android.widget.TextView;
 
 import com.julyyu.arsenal.R;
 import com.julyyu.uilibrary.adapter.BaseRecyclerAdapter;
@@ -13,13 +12,12 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by JulyYu on 2017/4/20.
+ * Created by julyyu on 2018/3/22.
  */
 
-public class ItemAdapter extends BaseRecyclerAdapter<String,ItemAdapter.ItemViewHolder> {
+public class MenuAdapter extends BaseRecyclerAdapter<String,MenuAdapter.MenuViewHolder> {
 
-
-    public ItemAdapter(List<String> datas) {
+    public MenuAdapter(List<String> datas) {
         super(datas);
     }
 
@@ -29,13 +27,12 @@ public class ItemAdapter extends BaseRecyclerAdapter<String,ItemAdapter.ItemView
     }
 
     @Override
-    protected ItemViewHolder createViewHolder(View view, int viewType) {
-        return new ItemViewHolder(view);
+    protected MenuViewHolder createViewHolder(View view, int viewType) {
+        return new MenuViewHolder(view);
     }
 
-
     @Override
-    public void onBindViewHolder(ItemViewHolder holder, final String data, final int position) {
+    public void onBindViewHolder(MenuViewHolder holder, String data, int position) {
         super.onBindViewHolder(holder, data, position);
         holder.btn.setText(data);
         holder.btn.setOnClickListener(new View.OnClickListener() {
@@ -48,10 +45,10 @@ public class ItemAdapter extends BaseRecyclerAdapter<String,ItemAdapter.ItemView
         });
     }
 
-    class ItemViewHolder extends BaseViewHolder {
+    class MenuViewHolder extends BaseViewHolder{
         @BindView(R.id.btn_content)
-        Button btn;
-        public ItemViewHolder(View itemView) {
+        TextView btn;
+        public MenuViewHolder(View itemView) {
             super(itemView);
         }
     }

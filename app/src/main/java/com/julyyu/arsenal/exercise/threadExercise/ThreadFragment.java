@@ -5,20 +5,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.julyyu.arsenal.R;
-import com.julyyu.arsenal.exercise.adapter.ItemAdapter;
+import com.julyyu.arsenal.ui.adapter.ItemAdapter;
 import com.julyyu.uilibrary.adapter.BaseRecyclerAdapter;
 import com.julyyu.uilibrary.fragment.BaseFragment;
 
 import java.util.Arrays;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Created by julyyu on 2018/2/12.

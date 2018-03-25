@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.MotionEvent;
 
 import com.julyyu.arsenal.exercise.bluetoothExercise.BlueToothDeviceSearchFragment;
+import com.julyyu.arsenal.exercise.deviceExercise.DeviceFragment;
 import com.julyyu.arsenal.exercise.objectCopyExercise.ObjectCopyFragment;
 import com.julyyu.arsenal.exercise.dataBindingExercise.DataBindingFragment;
 import com.julyyu.arsenal.exercise.ipcExercise.IPCFragment;
@@ -94,6 +95,9 @@ public class DefaultActivity extends BaseToolBarTitleActivity {
                 break;
             case 15:
                 setFragmentPage(new BlueToothDeviceSearchFragment());
+                break;
+            case 16:
+                setFragmentPage(new DeviceFragment());
                 break;
         }
     }

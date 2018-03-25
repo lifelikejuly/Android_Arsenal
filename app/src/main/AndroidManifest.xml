@@ -18,6 +18,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!--Android5.0之前，是默认申请GPS硬件功能的。而在Android 5.0 之后，需要在manifest 中申明GPS硬件模块功能的使用。-->
     <uses-feature android:name="android.hardware.location.gps" />
+    <!--使用相机、闪关灯-->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <!--为连接AIDL的服务自定义出一个新的权限-->
     <permission
