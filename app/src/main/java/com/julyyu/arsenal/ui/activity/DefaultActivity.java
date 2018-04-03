@@ -23,6 +23,7 @@ import com.julyyu.arsenal.exercise.launchModeExercise.LaunchrModeFragment;
 //import com.julyyu.arsenal.ui.fragment.WebViewFragment;
 import com.julyyu.arsenal.exercise.notificationExercise.NoticationFragment;
 import com.julyyu.arsenal.ui.fragment.refreshFragment;
+import com.julyyu.arsenal.ui.model.PageItem;
 import com.julyyu.uilibrary.activity.BaseToolBarTitleActivity;
 
 
@@ -46,60 +47,71 @@ public class DefaultActivity extends BaseToolBarTitleActivity {
 
     @Override
     protected void initDate() {
-        int position = getIntent().getIntExtra("position",0);
-        switch (position){
-            case 0:
-                setFragmentPage(new DefaultPageFragment());
-                break;
-            case 1:
-                setFragmentPage(new DeviceInfoFragment());
-                break;
-            case 2:
-                setFragmentPage(new refreshFragment());
-                break;
-            case 3:
-                setFragmentPage(new ImageCompressFragment());
-                break;
-            case 4:
-                setFragmentPage(new ChatInputFragment());
-                break;
-            case 5:
-                setFragmentPage(new LaunchrModeFragment());
-                break;
-            case 6:
-                setFragmentPage(new NoticationFragment());
-                break;
-            case 7:
-                setFragmentPage(new ToastCustomFragment());
-                break;
-            case 8:
-                setFragmentPage(new HandlerFragment());
-                break;
-            case 9:
-                setFragmentPage(new SerializationTestFragment());
-                break;
-            case 10:
-                setFragmentPage(new ThreadFragment());
-                break;
-            case 11:
-                setFragmentPage(new ReflectionFragment());
-                break;
-            case 12:
-                setFragmentPage(new IPCFragment());
-                break;
-            case 13:
-                setFragmentPage(new ObjectCopyFragment());
-                break;
-            case 14:
-                setFragmentPage(new DataBindingFragment());
-                break;
-            case 15:
-                setFragmentPage(new BlueToothDeviceSearchFragment());
-                break;
-            case 16:
-                setFragmentPage(new DeviceFragment());
-                break;
+        PageItem pageItem = (PageItem) getIntent().getSerializableExtra("page");
+        try {
+            fragment = (Fragment) Class.forName(pageItem.pageName).newInstance();
+            setFragmentPage(fragment);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+//        int position = getIntent().getIntExtra("position",0);
+//        switch (position){
+//            case 0:
+//                setFragmentPage(new DefaultPageFragment());
+//                break;
+//            case 1:
+//                setFragmentPage(new DeviceInfoFragment());
+//                break;
+//            case 2:
+//                setFragmentPage(new refreshFragment());
+//                break;
+//            case 3:
+//                setFragmentPage(new ImageCompressFragment());
+//                break;
+//            case 4:
+//                setFragmentPage(new ChatInputFragment());
+//                break;
+//            case 5:
+//                setFragmentPage(new LaunchrModeFragment());
+//                break;
+//            case 6:
+//                setFragmentPage(new NoticationFragment());
+//                break;
+//            case 7:
+//                setFragmentPage(new ToastCustomFragment());
+//                break;
+//            case 8:
+//                setFragmentPage(new HandlerFragment());
+//                break;
+//            case 9:
+//                setFragmentPage(new SerializationTestFragment());
+//                break;
+//            case 10:
+//                setFragmentPage(new ThreadFragment());
+//                break;
+//            case 11:
+//                setFragmentPage(new ReflectionFragment());
+//                break;
+//            case 12:
+//                setFragmentPage(new IPCFragment());
+//                break;
+//            case 13:
+//                setFragmentPage(new ObjectCopyFragment());
+//                break;
+//            case 14:
+//                setFragmentPage(new DataBindingFragment());
+//                break;
+//            case 15:
+//                setFragmentPage(new BlueToothDeviceSearchFragment());
+//                break;
+//            case 16:
+//                setFragmentPage(new DeviceFragment());
+//                break;
+//        }
     }
 
     private void setFragmentPage(Fragment fragment){

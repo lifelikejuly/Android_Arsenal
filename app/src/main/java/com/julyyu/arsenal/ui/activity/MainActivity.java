@@ -38,7 +38,7 @@ public class MainActivity extends BaseToolBarRecyclerRefreshActivity<ItemAdapter
         this.adapter.setItemSingleListener(new BaseRecyclerAdapter.ItemSingleListener<String>() {
             @Override
             public void onSingleClick(String clickedTask, int position) {
-                Route.goPage(MainActivity.this,position);
+                Route.goIndex(MainActivity.this,position);
             }
         });
     }

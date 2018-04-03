@@ -9,6 +9,7 @@ import com.julyyu.arsenal.exercise.launchModeExercise.SingleTopActivity;
 import com.julyyu.arsenal.exercise.launchModeExercise.StandardActivity;
 import com.julyyu.arsenal.ui.activity.DefaultActivity;
 import com.julyyu.arsenal.ui.activity.IndexActivity;
+import com.julyyu.arsenal.ui.model.PageItem;
 
 
 /**
@@ -27,6 +28,12 @@ public class Route {
     public static void goPage(Context context,int item){
         Intent intent = new Intent(context, DefaultActivity.class);
         intent.putExtra("position",item);
+        context.startActivity(intent);
+    }
+
+    public static void goPageItem(Context context,PageItem item){
+        Intent intent = new Intent(context, DefaultActivity.class);
+        intent.putExtra("page",item);
         context.startActivity(intent);
     }
 

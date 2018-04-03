@@ -36,14 +36,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.julyyu.arsenal.ui.activity.IndexActivity">
+        <activity android:name="com.julyyu.arsenal.ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".ui.activity.IndexActivity"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name="com.julyyu.arsenal.ui.activity.DefaultActivity"
             android:screenOrientation="portrait"
