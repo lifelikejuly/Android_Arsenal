@@ -5,6 +5,18 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 
 import com.julyyu.arsenal.Route;
+import com.julyyu.arsenal.exercise.AccountManagerExercise.AccountManagerFragmengt;
+import com.julyyu.arsenal.exercise.bluetoothExercise.BlueToothDeviceSearchFragment;
+import com.julyyu.arsenal.exercise.deviceExercise.DeviceFragment;
+import com.julyyu.arsenal.exercise.launchModeExercise.LaunchrModeFragment;
+import com.julyyu.arsenal.exercise.notificationExercise.NoticationFragment;
+import com.julyyu.arsenal.exercise.objectCopyExercise.ObjectCopyFragment;
+import com.julyyu.arsenal.exercise.procSysytemExercise.ProcFragment;
+import com.julyyu.arsenal.exercise.reflectionExercise.ReflectionFragment;
+import com.julyyu.arsenal.exercise.serializationExercise.SerializationTestFragment;
+import com.julyyu.arsenal.exercise.threadExercise.ThreadFragment;
+import com.julyyu.arsenal.exercise.toastCustomExercise.ToastCustomFragment;
+import com.julyyu.arsenal.exercise.ui.TextViewFragment;
 import com.julyyu.arsenal.ui.adapter.ItemAdapter;
 import com.julyyu.arsenal.ui.adapter.PageItemAdapter;
 import com.julyyu.arsenal.ui.model.PageItem;
@@ -27,21 +39,6 @@ public class IndexActivity extends BaseToolBarRecyclerRefreshActivity<PageItemAd
         setActionTitle("Index");
         setLeftIvVisibility(false);
         swipeRefreshLayout.setEnabled(false);
-//        List<String> strings = new ArrayList<>();
-//        strings.add("默认页");
-//        strings.add("设备信息");
-//        strings.add("自定义下拉");
-//        strings.add("图片压缩");
-//        strings.add("聊天输入");
-//        strings.add("跨进程通信");
-//        strings.add("DataBinding使用");
-//        setAdapter(new ItemAdapter(strings));
-//        this.adapter.setItemSingleListener(new BaseRecyclerAdapter.ItemSingleListener<String>() {
-//            @Override
-//            public void onSingleClick(String clickedTask, int position) {
-//                Route.goPage(IndexActivity.this,position);
-//            }
-//        });
     }
 
     @Override
@@ -50,21 +47,23 @@ public class IndexActivity extends BaseToolBarRecyclerRefreshActivity<PageItemAd
         List<PageItem> strings = new ArrayList<>();
         switch (position) {
             case 0:
-                strings.add(new PageItem("反射代理", "com.julyyu.arsenal.exercise.reflectionExercise.ReflectionFragment"));
-                strings.add(new PageItem("多线程", "com.julyyu.arsenal.exercise.threadExercise.ThreadFragment"));
-                strings.add(new PageItem("序列化", "com.julyyu.arsenal.exercise.serializationExercise.SerializationTestFragment"));
-                strings.add(new PageItem("浅拷贝和深拷贝", "com.julyyu.arsenal.exercise.objectCopyExercise.ObjectCopyFragment"));
+                strings.add(new PageItem("反射代理", ReflectionFragment.class));
+                strings.add(new PageItem("多线程", ThreadFragment.class));
+                strings.add(new PageItem("序列化", SerializationTestFragment.class));
+                strings.add(new PageItem("浅拷贝和深拷贝", ObjectCopyFragment.class));
                 break;
             case 1:
-                strings.add( new PageItem("LaunchrMode活动", "com.julyyu.arsenal.exercise.launchModeExercise.LaunchrModeFragment"));
-                strings.add(new PageItem("Handler、Thread的使用" , "com.julyyu.arsenal.exercise.reflectionExercise.ReflectionFragment"));
-                strings.add(new PageItem("Notification通知", "com.julyyu.arsenal.exercise.notificationExercise.NoticationFragment"));
-                strings.add( new PageItem("Toast提示框", "com.julyyu.arsenal.exercise.toastCustomExercise.ToastCustomFragment"));
-                strings.add(new PageItem("闪光灯使用" , "com.julyyu.arsenal.exercise.deviceExercise.DeviceFragment"));
-                strings.add( new PageItem("蓝牙BlueTooth使用", "com.julyyu.arsenal.exercise.bluetoothExercise.BlueToothDeviceSearchFragment"));
+                strings.add( new PageItem("LaunchrMode活动", LaunchrModeFragment.class));
+                strings.add(new PageItem("Handler、Thread的使用" , ReflectionFragment.class));
+                strings.add(new PageItem("Notification通知", NoticationFragment.class));
+                strings.add( new PageItem("Toast提示框", ToastCustomFragment.class));
+                strings.add(new PageItem("闪光灯使用" , DeviceFragment.class));
+                strings.add( new PageItem("蓝牙BlueTooth使用", BlueToothDeviceSearchFragment.class));
+                strings.add( new PageItem("同步账号", AccountManagerFragmengt.class));
+                strings.add( new PageItem("Proc文件系统", ProcFragment.class));
                 break;
             case 2:
-
+                strings.add( new PageItem("TextView跑马灯效果", TextViewFragment.class));
                 break;
             case 3:
 

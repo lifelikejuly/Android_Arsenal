@@ -3,6 +3,9 @@
           package="com.julyyu.arsenal"
     >
     <!--使用蓝牙所需要的权限-->
+    <uses-permission
+        android:name="android.permission.AUTHENTICATE_ACCOUNTS"
+        android:maxSdkVersion="22" />
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <!--使用扫描和设置蓝牙的权限（申明这一个权限必须申明上面一个权限-->
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
@@ -27,6 +30,8 @@
         android:protectionLevel="normal" />
     <!--添加上面自定义的权限-->
     <uses-permission android:name="com.julyyu.permission.ACCESS_BOOK_SERVICE" />
+    <!--同步账号权限-->
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
 
     <application
         android:name=".App"

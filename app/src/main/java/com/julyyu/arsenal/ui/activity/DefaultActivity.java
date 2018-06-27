@@ -49,13 +49,12 @@ public class DefaultActivity extends BaseToolBarTitleActivity {
     protected void initDate() {
         PageItem pageItem = (PageItem) getIntent().getSerializableExtra("page");
         try {
-            fragment = (Fragment) Class.forName(pageItem.pageName).newInstance();
+            fragment = (Fragment) pageItem.aClass.newInstance();
+//            fragment = (Fragment) Class.forName(pageItem.pageName).newInstance();
             setFragmentPage(fragment);
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 //        int position = getIntent().getIntExtra("position",0);

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.julyyu.arsenal.R;
+import com.julyyu.arsenal.exercise.annotationExercise.TypeInterface;
 import com.julyyu.arsenal.ui.base.BaseAppFragment;
 
 import butterknife.BindView;
@@ -50,6 +51,8 @@ public class ToastCustomFragment extends BaseAppFragment {
                 Toast.makeText(getContext(),"toast",Toast.LENGTH_SHORT).show();
             }
         });
+        TypeInterface.setInterfaceType(2);
+
     }
 
 }
