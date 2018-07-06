@@ -63,10 +63,13 @@ dependencies {
     compile ('com.github.bumptech.glide:glide:4.6.1'){
         exclude group: "com.android.support"
     }
+    compile 'com.tencent.wstt.gt:gt-sdk:3.1.0'
 //    compile 'com.yanzhenjie.nohttp:okhttp:1.1.8'
     annotationProcessor rootProject.ext.supportDependencies.butterknifecompiler
 //    compile 'com.tencent.sonic:sdk:1.0.0'
 //    compile "com.android.support:support-emoji:26.0.1"
     compile project(':uiLibrary')
     compile project(':utilsLibrary')
+    compile 'com.github.whataa:pandora:v1.0.1'
+//    compile 'com.github.whataa:pandora-no-op:v1.0.1'
 }

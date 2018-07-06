@@ -11,18 +11,16 @@ import com.julyyu.utilslibrary.util.LogUtils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 /**
  * Created by haocanyu on 2018/6/26.
  */
 
-public class ProcFragment extends BaseFragment{
+public class ProcFragment extends BaseFragment {
 
     @Override
     protected int getLayout() {
@@ -32,12 +30,30 @@ public class ProcFragment extends BaseFragment{
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        }).start();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                getCPU_total();
-                getCPU_app(android.os.Process.myPid());
-                getCPU_app2(android.os.Process.myPid());
+//                getCPU_total();
+//                getCPU_app(android.os.Process.myPid());
+//                getCPU_app2(android.os.Process.myPid());
                 gettask(android.os.Process.myPid());
 //                long cpuApp = getCPU_app(android.os.Process.myPid());
 //                LogUtils.printD(cpuApp + "");
@@ -48,6 +64,7 @@ public class ProcFragment extends BaseFragment{
         }).start();
 
     }
+
     public static void getCPU_total() {
         try {
             String str2 = "";
@@ -66,7 +83,7 @@ public class ProcFragment extends BaseFragment{
         try {
 
             try {
-                String str2="";
+                String str2 = "";
                 FileReader fr = new FileReader("/proc/" + pid + "/stat");
                 BufferedReader localBufferedReader = new BufferedReader(fr, 8192);
                 while ((str2 = localBufferedReader.readLine()) != null) {
@@ -100,7 +117,7 @@ public class ProcFragment extends BaseFragment{
     public static void getCPU_app2(int pid) {
         try {
             String str2 = "";
-            FileReader fr = new FileReader("/proc/"+ pid+"/status");
+            FileReader fr = new FileReader("/proc/" + pid + "/status");
             BufferedReader localBufferedReader = new BufferedReader(fr, 8192);
             while ((str2 = localBufferedReader.readLine()) != null) {
                 LogUtils.printD(str2);
@@ -110,14 +127,70 @@ public class ProcFragment extends BaseFragment{
     }
 
     public static void gettask(int pid) {
-        try {
-            String str2 = "";
-            FileReader fr = new FileReader("/proc/"+ pid+"/task");
-            BufferedReader localBufferedReader = new BufferedReader(fr, 8192);
-            while ((str2 = localBufferedReader.readLine()) != null) {
-                LogUtils.printD(str2);
+        File threadDir = new File("/proc/" + pid + "/task");
+        File[] threadFiles = threadDir.listFiles();
+        String str2;
+        String cpuThreads = "";
+        for (File threadFile : threadFiles) {
+            BufferedReader pidReader = null;
+            try {
+                File statFile = new File(threadFile, "stat");
+                pidReader = new BufferedReader(new InputStreamReader(
+                        new FileInputStream(statFile)), 1000);
+
+                String line = pidReader.readLine();
+                if (line != null) {
+                    // 找到第一个'('和最后一个')'
+                    int firstQianKuoHao = 0;
+                    int lastHouKuoHao = 0;
+                    for (int k = 0; k < line.length(); k++) {
+                        if (line.charAt(k)=='(' && firstQianKuoHao==0) {
+                            firstQianKuoHao = k;
+                        }
+
+                        if (line.charAt(k)==')' && k > lastHouKuoHao) {
+                            lastHouKuoHao = k;
+                        }
+                    }
+
+                    String threadId = line.substring(0, firstQianKuoHao - 1);
+                    String threadName = line.substring(firstQianKuoHao + 1,lastHouKuoHao);
+                    String lastLine = line.substring(lastHouKuoHao + 2,line.length());
+                    String[] pidCpuInfoList = lastLine.split(" ");
+
+                    if (pidCpuInfoList.length >= 17) {
+                        long threadCpp = Long.parseLong(pidCpuInfoList[11]) +
+                                Long.parseLong(pidCpuInfoList[12]);
+                        cpuThreads = cpuThreads + threadId + ":" + threadCpp + ":" +
+                                threadName.replace(",","@@@")
+                                        .replace(":","%%%")
+                                        .replace("\n","")+",";
+
+                    }
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (pidReader != null) {
+                    try {
+                        pidReader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-        } catch (IOException e) {
+
         }
+        LogUtils.printD(cpuThreads);
+//        try {
+//            String str2 = "";
+//            FileReader fr = new FileReader("/proc/"+ pid+"/task");
+//            BufferedReader localBufferedReader = new BufferedReader(fr, 8192);
+//            while ((str2 = localBufferedReader.readLine()) != null) {
+//                LogUtils.printD(str2);
+//            }
+//        } catch (IOException e) {
+//        }
     }
 }

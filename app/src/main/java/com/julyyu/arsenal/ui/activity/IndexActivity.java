@@ -7,6 +7,7 @@ import android.os.PersistableBundle;
 import com.julyyu.arsenal.Route;
 import com.julyyu.arsenal.exercise.AccountManagerExercise.AccountManagerFragmengt;
 import com.julyyu.arsenal.exercise.bluetoothExercise.BlueToothDeviceSearchFragment;
+import com.julyyu.arsenal.exercise.crashExercise.CrashFragment;
 import com.julyyu.arsenal.exercise.deviceExercise.DeviceFragment;
 import com.julyyu.arsenal.exercise.launchModeExercise.LaunchrModeFragment;
 import com.julyyu.arsenal.exercise.notificationExercise.NoticationFragment;
@@ -61,6 +62,7 @@ public class IndexActivity extends BaseToolBarRecyclerRefreshActivity<PageItemAd
                 strings.add( new PageItem("蓝牙BlueTooth使用", BlueToothDeviceSearchFragment.class));
                 strings.add( new PageItem("同步账号", AccountManagerFragmengt.class));
                 strings.add( new PageItem("Proc文件系统", ProcFragment.class));
+                strings.add( new PageItem("Crash生成", CrashFragment.class));
                 break;
             case 2:
                 strings.add( new PageItem("TextView跑马灯效果", TextViewFragment.class));

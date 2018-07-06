@@ -3,13 +3,13 @@ ext {
             compileSdkVersion: 26,
             buildToolsVersion: '26.0.2',
             applicationId    : "com.julyyu.kitdemo",
-            minSdkVersion    : 14,
+            minSdkVersion    : 21,
             targetSdkVersion : 26,
             versionCode      : 1,
             versionName      : "1.0"
     ]
     //Version
-    supportLibrary = "26.0.2"
+    supportLibrary = "26.1.0"
 
 //    dependencies = [
 //            "junit" : 'junit:junit:4.12',

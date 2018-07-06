@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.Context;
 
 import com.julyyu.utilslibrary.util.LogUtils;
+import com.tencent.wstt.gt.controller.GTRController;
+
+import tech.linjiang.pandora.Pandora;
 
 
 /**
@@ -17,6 +20,7 @@ public class App extends Application {
         super.onCreate();
         mContext =getApplicationContext();
         LogUtils.open();
+        Pandora.init(this).enableShakeOpen();
 //        CrashCaptureMachine.Builder builder = new CrashCaptureMachine.Builder();
 //        builder.isLaunchrActivity(true)
 //                .isRecordFile(false)
